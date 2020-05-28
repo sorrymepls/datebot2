@@ -3,6 +3,10 @@ const Extra = require("telegraf/extra");
 const Markup = require("telegraf/markup");
 const myId = 333988817;
 const saniaId = 333988817;
+const PORT = process.env.PORT || 3000;
+bot.listen(PORT, () => {
+  console.log(`Our app is running on port ${PORT}`);
+});
 // const saniaId = 396190668;
 
 const bot = new Telegraf("1180832115:AAHfJVRgsKuoairS0eztgfBEmNIC7Gk96A0");
