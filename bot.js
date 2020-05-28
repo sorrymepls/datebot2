@@ -11,30 +11,43 @@ const bot = new Telegraf("1180832115:AAHfJVRgsKuoairS0eztgfBEmNIC7Gk96A0");
 // });https://1.bp.blogspot.com/-BHPWoOCBRcg/Udxd9BnTUVI/AAAAAAAABmU/KhXBwGYGG9Y/s1600/09_ok_web_thumbs.jpg
 
 //  Старт бота, готова чи ні
+// bot.start((ctx) => {
+//   if (ctx.message.chat.id === myId || saniaId) {
+//     return ctx.replyWithPhoto(
+//       {
+//         url:
+//           "https://1.bp.blogspot.com/-BHPWoOCBRcg/Udxd9BnTUVI/AAAAAAAABmU/KhXBwGYGG9Y/s1600/09_ok_web_thumbs.jpg",
+//       },
+//       Extra.load({
+//         caption: `Давай жди действий`,
+//       })
+//     );
+//   } else {
+//     bot.telegram.sendMessage(saniaId, "Настя стартанула бота"),
+//       bot.telegram.sendMessage(myId, "Настя стартанула бота"),
+//       ctx.reply(
+//         "Привіт! Ти готова до цікавого вечора?",
+//         Extra.HTML().markup((m) =>
+//           m.inlineKeyboard([
+//             m.callbackButton("Так", "startBot"),
+//             m.callbackButton("Ні", "restartBot"),
+//           ])
+//         )
+//       );
+//   }
+// });
 bot.start((ctx) => {
-  if (ctx.message.chat.id === myId || saniaId) {
-    return ctx.replyWithPhoto(
-      {
-        url:
-          "https://1.bp.blogspot.com/-BHPWoOCBRcg/Udxd9BnTUVI/AAAAAAAABmU/KhXBwGYGG9Y/s1600/09_ok_web_thumbs.jpg",
-      },
-      Extra.load({
-        caption: `Давай жди действий`,
-      })
+  bot.telegram.sendMessage(saniaId, "Настя стартанула бота"),
+    bot.telegram.sendMessage(myId, "Настя стартанула бота"),
+    ctx.reply(
+      "Привіт! Ти готова до цікавого вечора?",
+      Extra.HTML().markup((m) =>
+        m.inlineKeyboard([
+          m.callbackButton("Так", "startBot"),
+          m.callbackButton("Ні", "restartBot"),
+        ])
+      )
     );
-  } else {
-    bot.telegram.sendMessage(saniaId, "Настя стартанула бота"),
-      bot.telegram.sendMessage(myId, "Настя стартанула бота"),
-      ctx.reply(
-        "Привіт! Ти готова до цікавого вечора?",
-        Extra.HTML().markup((m) =>
-          m.inlineKeyboard([
-            m.callbackButton("Так", "startBot"),
-            m.callbackButton("Ні", "restartBot"),
-          ])
-        )
-      );
-  }
 });
 
 // ЗВОНОК-------ЗВОНОК-------ЗВОНОК-------ЗВОНОК-------ЗВОНОК-------ЗВОНОК-------ЗВОНОК-------
