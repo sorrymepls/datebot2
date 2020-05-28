@@ -2,7 +2,8 @@ const Telegraf = require("telegraf");
 const Extra = require("telegraf/extra");
 const Markup = require("telegraf/markup");
 const myId = 333988817;
-const saniaId = 396190668;
+const saniaId = 333988817;
+// const saniaId = 396190668;
 
 const bot = new Telegraf("1180832115:AAHfJVRgsKuoairS0eztgfBEmNIC7Gk96A0");
 
@@ -158,7 +159,6 @@ bot.action("firstTypeText", (ctx) => {
     saniaId,
     "Настя дивиться першу підказку для 1 локації"
   );
-  kissCount += 1;
 
   return ctx.reply(
     "🚥 Це місце неподалік моста, недалеко від тебе",
@@ -180,7 +180,6 @@ bot.action("firstTypeLoc", (ctx) => {
     saniaId,
     "Настя дивиться другу підказку для 1 локації)"
   );
-  kissCount += 2;
 
   console.log(ctx);
 
@@ -232,7 +231,6 @@ bot.action("secondMes", (ctx) => {
 bot.action("secondTypeText", (ctx) => {
   bot.telegram.sendMessage(myId, "Настя дивиться першу підказку 2 локації)");
   bot.telegram.sendMessage(saniaId, "Настя дивиться першу підказку 2 локації)");
-  kissCount += 1;
   return ctx.reply(
     "Це - магазин, назва має шось спільне з деревом",
     Extra.markup((m) =>
@@ -247,7 +245,6 @@ bot.action("secondTypeText", (ctx) => {
 bot.action("secondTypeLoc", (ctx) => {
   bot.telegram.sendMessage(myId, "Настя дивиться другу підказку 2 локації)");
   bot.telegram.sendMessage(saniaId, "Настя дивиться другу підказку 2 локації)");
-  kissCount += 2;
   return ctx.replyWithLocation(
     "48.287530",
     "25.938374",
